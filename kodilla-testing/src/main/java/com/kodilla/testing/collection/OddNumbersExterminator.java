@@ -11,6 +11,6 @@ public class OddNumbersExterminator {
                 evenNumbers.add(number);
             }
         }
-        System.out.println(evenNumbers.size());
+        System.out.println(evenNumbers);
     }
 }
