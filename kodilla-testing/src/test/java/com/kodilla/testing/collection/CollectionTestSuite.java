@@ -18,8 +18,8 @@ public class CollectionTestSuite {
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
         ArrayList<Integer> numberList = new ArrayList<>();
         // When / Act
-        exterminator.exterminate(numberList);
-        int result = numberList.size();
+        ArrayList<Integer> evenNumbers = exterminator.exterminate(numberList);
+        int result = evenNumbers.size();
         if(result == 0) {
             System.out.println("Test passed!");
         } else {
@@ -40,14 +40,14 @@ public class CollectionTestSuite {
         numberList.add(54);
         numberList.add(56);
         // When / Act
-        exterminator.exterminate(numberList);
-        int result = numberList.size();
+        ArrayList<Integer> evenNumbers = exterminator.exterminate(numberList);
+        int result = evenNumbers.size();
         if(result != 0) {
             System.out.println("Test passed!");
         } else {
             System.out.println("Error!");
         }
         // Then / Assert
-        Assert.assertEquals(6, result);
+        Assert.assertEquals(4, result);
     }
 }
