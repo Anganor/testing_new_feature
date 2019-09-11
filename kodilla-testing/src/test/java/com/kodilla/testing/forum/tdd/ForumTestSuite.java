@@ -2,7 +2,6 @@ package com.kodilla.testing.forum.tdd;
 
 import com.kodilla.testing.forum.*;
 import org.junit.*;
-import java.util.ArrayList;
 
 public class ForumTestSuite {
     private static int testCounter = 0;

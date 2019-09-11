@@ -1,6 +1,6 @@
 package com.kodilla.testing.collection;
-import org.junit.*;
 
+import org.junit.*;
 import java.util.ArrayList;
 
 public class CollectionTestSuite {
