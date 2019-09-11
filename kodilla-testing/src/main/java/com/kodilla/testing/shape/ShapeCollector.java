@@ -14,7 +14,10 @@ public class ShapeCollector {
     }
 
     public Shape getFigure(int n) {
-        return shapes.get(n);
+        while(n >= 0  && n < shapes.size()) {
+            return shapes.get(n);
+        }
+        return null;
     }
 
     public void showFigures() {
