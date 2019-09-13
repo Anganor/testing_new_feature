@@ -5,6 +5,35 @@ public class CalculateStatistics {
     double avgPostsPerUser;
     double avgCommentsPerUser;
     double avgCommentsPerPost;
+    int usersAmount;
+    int postsAmount;
+    int commentsAmount;
+
+    public CalculateStatistics(Statistics statistics) {
+        this.statistics = statistics;
+    }
+
+    void calculateAdvStatistics(Statistics statistics) {
+        usersAmount = statistics.usersNames().size();
+        postsAmount = statistics.postsCount();
+        commentsAmount = statistics.commentsCount();
+
+        if(usersAmount > 0) {
+            avgPostsPerUser = postsAmount / usersAmount;
+        } else {
+            avgPostsPerUser = 0;
+        }
+        if(usersAmount > 0) {
+            avgCommentsPerUser = commentsAmount / usersAmount;
+        } else {
+            avgCommentsPerUser = 0;
+        }
+        if(postsAmount > 0) {
+            avgCommentsPerPost = commentsAmount / postsAmount;
+        } else {
+            avgCommentsPerPost = 0;
+        }
+    }
 
     public double getAvgPostsPerUser() {
         return avgPostsPerUser;
@@ -16,20 +45,6 @@ public class CalculateStatistics {
 
     public double getAvgCommentsPerPost() {
         return avgCommentsPerPost;
-    }
-
-    public CalculateStatistics(Statistics statistics) {
-        this.statistics = statistics;
-    }
-
-    void calculateAdvStatistics(Statistics statistics) {
-        int usersAmount = statistics.usersNames().size();
-        int postsAmount = statistics.postsCount();
-        int commentsAmount = statistics.commentsCount();
-
-        avgPostsPerUser = postsAmount / usersAmount;
-        avgCommentsPerUser = commentsAmount / usersAmount;
-        avgCommentsPerPost = commentsAmount / postsAmount;
     }
 
     void showStatistics() {
