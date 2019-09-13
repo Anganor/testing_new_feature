@@ -1,11 +1,16 @@
 package com.kodilla.testing.forum.statistics;
 
-import org.junit.Test;
+import org.junit.*;
 import java.util.*;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 public class CalculateStatisticsTestSuite {
+
+    @Before
+    public void beforeEachTest() {
+        System.out.println("--------------------------------------");
+    }
 
     @Test
     public void testCalculateAdvStatisticsWith0Posts() {
@@ -25,6 +30,7 @@ public class CalculateStatisticsTestSuite {
         assertEquals(0, calculateStatistics.getAvgPostsPerUser(), 1);
         assertEquals(10, calculateStatistics.getAvgCommentsPerUser(), 1);
         assertEquals(0, calculateStatistics.getAvgCommentsPerPost(), 1);
+        calculateStatistics.showStatistics();
     }
 
     @Test
@@ -49,6 +55,7 @@ public class CalculateStatisticsTestSuite {
         assertEquals(200, calculateStatistics.getAvgPostsPerUser(), 1);
         assertEquals(100, calculateStatistics.getAvgCommentsPerUser(), 1);
         assertEquals(0.5, calculateStatistics.getAvgCommentsPerPost(), 1);
+        calculateStatistics.showStatistics();
     }
 
     @Test
@@ -72,6 +79,7 @@ public class CalculateStatisticsTestSuite {
         assertEquals(25, calculateStatistics.getAvgPostsPerUser(), 1);
         assertEquals(0, calculateStatistics.getAvgCommentsPerUser(), 1);
         assertEquals(0, calculateStatistics.getAvgCommentsPerPost(), 1);
+        calculateStatistics.showStatistics();
     }
 
     @Test
@@ -94,6 +102,7 @@ public class CalculateStatisticsTestSuite {
         assertEquals(333, calculateStatistics.getAvgPostsPerUser(), 1);
         assertEquals(33, calculateStatistics.getAvgCommentsPerUser(), 1);
         assertEquals(0.1, calculateStatistics.getAvgCommentsPerPost(), 1);
+        calculateStatistics.showStatistics();
     }
 
     @Test
@@ -115,6 +124,7 @@ public class CalculateStatisticsTestSuite {
         assertEquals(5, calculateStatistics.getAvgPostsPerUser(), 1);
         assertEquals(50, calculateStatistics.getAvgCommentsPerUser(), 1);
         assertEquals(10, calculateStatistics.getAvgCommentsPerPost(), 1);
+        calculateStatistics.showStatistics();
     }
 
     @Test
@@ -134,6 +144,7 @@ public class CalculateStatisticsTestSuite {
         assertEquals(0, calculateStatistics.getAvgPostsPerUser(), 1);
         assertEquals(0, calculateStatistics.getAvgCommentsPerUser(), 1);
         assertEquals(0, calculateStatistics.getAvgCommentsPerPost(), 1);
+        calculateStatistics.showStatistics();
     }
 
     @Test
@@ -156,5 +167,6 @@ public class CalculateStatisticsTestSuite {
         assertEquals(10, calculateStatistics.getAvgPostsPerUser(), 1);
         assertEquals(10, calculateStatistics.getAvgCommentsPerUser(), 1);
         assertEquals(1, calculateStatistics.getAvgCommentsPerPost(), 1);
+        calculateStatistics.showStatistics();
     }
 }

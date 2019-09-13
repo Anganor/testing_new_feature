@@ -15,5 +15,6 @@ public class WeatherForecastTestSuite {
 
         //Then / Assert
         Assert.assertEquals(5, quantityOfSensors);
+        System.out.println(weatherForecast.calculateForecast());
     }
 }
