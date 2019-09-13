@@ -1,6 +1,7 @@
 package com.kodilla.testing.library;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class BookLibrary {
@@ -17,5 +18,11 @@ public class BookLibrary {
         if(resultList.size() > 20) return bookList;
         bookList = resultList;
         return bookList;
+    }
+
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
+        List<Book> rentedBooks;
+        rentedBooks = libraryDatabase.listBooksInHandsOf(libraryUser);
+        return rentedBooks;
     }
 }
