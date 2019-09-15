@@ -33,8 +33,8 @@ public class ForumUser {
         return publishedPosts;
     }
 
-    public int getBirthday() {
-        return birthday.getYear();
+    public LocalDate getBirthday() {
+        return birthday;
     }
 
     @Override
