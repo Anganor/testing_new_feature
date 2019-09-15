@@ -2,12 +2,11 @@ package com.kodilla.stream.world;
 
 import java.math.BigDecimal;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public final class World {
-    private final Set<Continent> listOfContinents = new HashSet<>();
+    private final List<Continent> listOfContinents = new ArrayList<>();
 
-    public Set<Continent> getListOfContinents() {
+    public List<Continent> getListOfContinents() {
         return listOfContinents;
     }
 
