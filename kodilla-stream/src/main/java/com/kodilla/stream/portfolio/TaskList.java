@@ -38,9 +38,8 @@ public final class TaskList {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof TaskList)) return false;
         TaskList taskList = (TaskList) o;
-        if (!tasks.equals(taskList.tasks)) return false;
         return name.equals(taskList.name);
     }
 }
