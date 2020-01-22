@@ -10,15 +10,17 @@ public class BoardTestSuite {
     public void testTaskAdd() {
         // Given / Arrange
         ApplicationContext context = new AnnotationConfigApplicationContext(BoardConfig.class);
-        Board board = context.getBean(Board.class);
+        TaskList toDoList = (TaskList) context.getBean("toDoList");
+        TaskList inProgressList = (TaskList) context.getBean("inProgressList");
+        TaskList doneList = (TaskList) context.getBean("doneList");
 
         // When / Act
-        board.toDoList.addTask("Buy flowers.");
-        board.inProgressList.addTask("Get the house cleaned.");
-        board.doneList.addTask("Walk the dog.");
+        toDoList.addTask("Buy flowers.");
+        inProgressList.addTask("Get the house cleaned.");
+        doneList.addTask("Walk the dog.");
 
-        boolean checkInProgressTask = board.getInProgressList().getTasks().contains("Get the house cleaned.");
-        int doneListSize = board.doneList.getTasks().size();
+        boolean checkInProgressTask = inProgressList.getTasks().contains("Get the house cleaned.");
+        int doneListSize = doneList.getTasks().size();
 
         // Then / Assert
         Assert.assertTrue(checkInProgressTask);

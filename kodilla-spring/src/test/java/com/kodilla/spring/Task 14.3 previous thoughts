@@ -1,0 +1,16 @@
+            BoardConfig:
+            @Bean
+            public Board getBoard(TaskList toDoList, TaskList inProgressList, TaskList doneList) {
+                return new Board(toDoList, inProgressList, doneList);
+            }
+
+
+
+        TestSuite:
+        // Given / Arrange
+        //Board board = context.getBean(Board.class);
+
+        // When / Act
+        //TaskList toDoList = board.getToDoList();
+        //TaskList inProgressList = board.getInProgressList();
+        //TaskList doneList = board.getDoneList();
