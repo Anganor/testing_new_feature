@@ -9,13 +9,13 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class BoardConfig {
     @Autowired
-    //@Qualifier("toDoList")
+    @Qualifier("toDoList")
     TaskList toDoList;
     @Autowired
-    //@Qualifier("inProgressList")
+    @Qualifier("inProgressList")
     TaskList inProgressList;
     @Autowired
-    //@Qualifier("doneList")
+    @Qualifier("doneList")
     TaskList doneList;
 
 /*
