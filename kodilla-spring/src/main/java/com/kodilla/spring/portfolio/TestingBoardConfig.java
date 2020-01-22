@@ -7,16 +7,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
-public class BoardConfig {
+public class TestingBoardConfig {
     @Autowired
+    @Qualifier("toDoList")
     //@Qualifier("toDoList")
-    TaskList toDoList;
-    @Autowired
+    TaskList taskList;
+    /*@Autowired
     //@Qualifier("inProgressList")
     TaskList inProgressList;
     @Autowired
     //@Qualifier("doneList")
-    TaskList doneList;
+    TaskList doneList;*/
 
 /*
     @Bean
@@ -25,19 +26,19 @@ public class BoardConfig {
     }
 */
 
-    @Bean(name = "toDoList")
+    @Bean//(name = "toDoList")
     @Scope("prototype")
     public TaskList toDoList() {
         return new TaskList();
     }
 
-    @Bean(name = "inProgressList")
+    @Bean//(name = "inProgressList")
     @Scope("prototype")
     public TaskList inProgressList() {
         return new TaskList();
     }
 
-    @Bean(name = "doneList")
+    @Bean//(name = "doneList")
     @Scope("prototype")
     public TaskList doneList() {
         return new TaskList();

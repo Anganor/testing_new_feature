@@ -16,6 +16,11 @@ public final class TaskList {
 
     public void addTask(String task) {
         tasks.add(task);
-        System.out.println(task);
+        System.out.println("Adding new task to the list: " + task);
+    }
+
+    public void removeTask(String task) {
+        System.out.println("Removing a task: \"" + task + "\", from the list.");
+        tasks.remove(task);
     }
 }
