@@ -39,6 +39,6 @@ public class LoggerTestSuite {
         int lengthOfLastLog = Logger.getInstance().getLastLog().length();
 
         // Then / Assert
-        Assert.assertEquals(lengthOfLastLog, 9);
+        Assert.assertEquals(9, lengthOfLastLog);
     }
 }
