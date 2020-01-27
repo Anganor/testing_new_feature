@@ -27,10 +27,26 @@ public class TaskListDaoTestSuite {
         // Then / Assert
         Assert.assertEquals("1st list", foundedList);
 
-        //ClenUp
+        //CleanUp
         int id = taskList.getId();
         taskListDao.deleteById(id);
+    }
 
+    @Test
+    public void testSizeOfList() {
+        // Given / Arrange
+        TaskList taskList = new TaskList(LISTNAME, "Testing the list creation");
+        taskListDao.save(taskList);
+
+        // When / Act
+        long size = taskListDao.count();
+
+        // Then / Assert
+        Assert.assertEquals(1, size);
+
+        //CleanUp
+        int id = taskList.getId();
+        taskListDao.deleteById(id);
     }
 
 }
