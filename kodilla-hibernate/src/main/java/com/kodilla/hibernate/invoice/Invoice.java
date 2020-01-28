@@ -1,43 +1,41 @@
 package com.kodilla.hibernate.invoice;
 
-import com.kodilla.hibernate.task.Task;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "PRODUCT")
-public class Product {
+@Table(name = "INVOICE")
+public class Invoice {
     private int id;
-    private String Name;
+    private String number;
     private List<Item> items = new ArrayList<>();
 
-    public Product(String name) {
-        Name = name;
+    public Invoice(String number) {
+        this.number = number;
     }
 
-    public Product() {
+    public Invoice() {
     }
 
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "PRODUCT_ID", unique = true)
+    @Column(name = "INVOICE_ID", unique = true)
     public int getId() {
         return id;
     }
 
     @NotNull
-    @Column(name = "PRODUCT_NAME")
-    public String getName() {
-        return Name;
+    @Column(name = "INVOICE_NAME")
+    public String getNumber() {
+        return number;
     }
 
     @OneToMany(
             targetEntity = Item.class,
-            mappedBy = "product",
+            mappedBy = "invoice",
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )
@@ -49,8 +47,8 @@ public class Product {
         this.id = id;
     }
 
-    private void setName(String name) {
-        Name = name;
+    private void setNumber(String number) {
+        this.number = number;
     }
 
     private void setItems(List<Item> items) {
