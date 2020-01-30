@@ -40,10 +40,6 @@ public class InvoiceDaoTestSuite {
 
         // When / Act
         productDao.save(invoice);
-        itemDao.save(item1);
-        itemDao.save(item2);
-        invoiceDao.save(toy);
-        invoiceDao.save(car);
 
         int size = invoice.getItems().size();
         String invoiceNumber = item1.getInvoice().getNumber();

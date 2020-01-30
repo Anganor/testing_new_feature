@@ -5,6 +5,18 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQueries({
+        @NamedNativeQuery(
+            name="Company.retrieveCompanyNameByChars",
+            query = "SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :COMPANY_NAME",
+            resultClass = Company.class
+        ),
+        @NamedNativeQuery(
+                name = "Company.retrieveCompanyByName",
+                query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME = :COMPANY_NAME",
+                resultClass = Company.class
+        )
+})
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
@@ -48,5 +60,12 @@ public class Company {
 
     private void setEmployees(List<Employee> employees) {
         this.employees = employees;
+    }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

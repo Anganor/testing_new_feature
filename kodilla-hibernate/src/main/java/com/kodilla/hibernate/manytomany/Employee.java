@@ -5,6 +5,16 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQueries({
+        @NamedQuery(
+                name="Employee.retrieveByLastname",
+                query = "FROM Employee WHERE lastname = :LASTNAME"
+        ),
+        @NamedQuery(
+                name="Employee.retrieveNameByChars",
+                query = "FROM Employee WHERE SUBSTRING(firstname, 1, 3) = :FIRSTNAME"
+        )
+})
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
@@ -65,5 +75,13 @@ public class Employee {
 
     private void setCompanies(List<Company> companies) {
         this.companies = companies;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                '}';
     }
 }
