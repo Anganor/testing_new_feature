@@ -49,15 +49,14 @@ public class InvoiceDaoTestSuite {
         String invoiceNumber = item1.getInvoice().getNumber();
         String productName = item2.getProduct().getName();
 
+        int id = invoice.getId();
+
         // Then / Assert
         Assert.assertEquals(2, size);
         Assert.assertEquals("#1", invoiceNumber);
         Assert.assertEquals("Car", productName);
 
-
         // CleanUp
-        productDao.deleteAll();
-        invoiceDao.deleteAll();
-        itemDao.deleteAll();
+        invoiceDao.deleteById(id);
     }
 }

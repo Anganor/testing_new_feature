@@ -20,7 +20,7 @@ public class Invoice {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
     @Column(name = "INVOICE_ID", unique = true)
     public int getId() {
