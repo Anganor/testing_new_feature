@@ -1,7 +1,5 @@
 package com.kodilla.good.patterns.challenges.movies;
 
-import com.kodilla.good.patterns.challenges.onlineshop.*;
-
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;

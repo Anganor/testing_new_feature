@@ -6,7 +6,7 @@ public class Order {
     private int orderNumber;
     private Customer customer;
     private Product product;
-    private FoodProducer foodProducer;
+    FoodProducer foodProducer;
 
     public Order(int orderNumber, Customer customer, Product product, FoodProducer foodProducer) {
         this.orderNumber = orderNumber;

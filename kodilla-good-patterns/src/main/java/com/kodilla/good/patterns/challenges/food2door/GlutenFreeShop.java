@@ -11,7 +11,8 @@ public class GlutenFreeShop implements FoodProducer {
     }
 
     @Override
-    public void process(Customer customer, Product product) {
+    public boolean process(Order order) {
+        return productsList.contains(order.getProduct());
     }
 
     @Override

@@ -1,18 +1,22 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
-import java.util.Objects;
-
 public class Product {
     private String productName;
+    private double productPrice;
     private int quantity;
 
-    public Product(String productName, int quantity) {
+    public Product(String productName, double productPrice, int quantity) {
         this.productName = productName;
+        this.productPrice = productPrice;
         this.quantity = quantity;
     }
 
     public String getProductName() {
         return productName;
+    }
+
+    public double getProductPrice() {
+        return productPrice;
     }
 
     public int getQuantity() {
@@ -30,6 +34,6 @@ public class Product {
 
     @Override
     public int hashCode() {
-        return Objects.hash(productName, quantity);
+        return productName.hashCode();
     }
 }
