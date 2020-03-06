@@ -13,6 +13,10 @@ import java.util.List;
         @NamedQuery(
                 name="Employee.retrieveNameByChars",
                 query = "FROM Employee WHERE SUBSTRING(firstname, 1, 3) = :FIRSTNAME"
+        ),
+        @NamedQuery(
+                name="Employee.searchLastnameByChars",
+                query = "FROM Employee WHERE lastname LIKE CONCAT('%',:LASTNAME, '%')"
         )
 })
 @Entity

@@ -15,6 +15,10 @@ import java.util.List;
                 name = "Company.retrieveCompanyByName",
                 query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME = :COMPANY_NAME",
                 resultClass = Company.class
+        ),
+        @NamedNativeQuery(
+                name="Company.searchCompanyNameByChars",
+                query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT('%', :NAME, '%')"
         )
 })
 @Entity

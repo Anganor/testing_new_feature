@@ -14,6 +14,6 @@ public class FlightApplication {
         flightSearcher2.flightsTo(connections, "WRO");
         System.out.println();
         FlightSearcher flightSearcher3 = new FlightSearcher();
-        flightSearcher3.flightsVia(connections, "KTW", "WRO");
+        flightSearcher3.flightsVia("KTW", "WRO");
     }
 }
